@@ -1,28 +1,28 @@
 #include "movimientoarribaabajodiagonal.h"
 #include "Components/StaticMeshComponent.h"
 
-// Constructor
+// Constructor 
 Amovimientoarribaabajodiagonal::Amovimientoarribaabajodiagonal()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	// Crear el mesh (cubo)
+
 	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComponent"));
 	RootComponent = MeshComponent;
 
-	// Valores por defecto
+	
 	Velocidad = 200.0f;
 	bMover = true;
 	DireccionMovimiento = EMoveDirection::Right;
 }
 
-// BeginPlay
+// BeginPlay creoo
 void Amovimientoarribaabajodiagonal::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Tick (movimiento continuo)
+
 void Amovimientoarribaabajodiagonal::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -35,7 +35,7 @@ void Amovimientoarribaabajodiagonal::Tick(float DeltaTime)
 	SetActorLocation(NuevaPosicion);
 }
 
-// Función que convierte enum ? vector (CLAVE DE LA TAREA)
+
 FVector Amovimientoarribaabajodiagonal::ObtenerVectorDireccion()
 {
 	switch (DireccionMovimiento)
